@@ -1,0 +1,28 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - static-data:/vol/static
+      - media-data:/vol/media
+
+  proxy:
+    build:
+      context: ./proxy
+    restart: always
+    volumes:
+      - static-data:/vol/static
+      - media-data:/vol/media
+    ports:
+      - 80:80
+    depends_on:
+      - app
+
+volumes:
+  static-data:
+  media-data:

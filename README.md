@@ -299,6 +299,7 @@ docker-compose up
 ```
 
 - Finally, the server should be running for you.
+  
 ![run server](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/run%20server.png)
 
 

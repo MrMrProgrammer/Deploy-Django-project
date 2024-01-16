@@ -83,6 +83,10 @@ STATIC_ROOT = "/vol/static"
 
 # directory where all files uploaded by users(media files) are going to be put
 MEDIA_ROOT = "/vol/media"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 ```
 
 ### 3. Inside myapp/models.py create a model

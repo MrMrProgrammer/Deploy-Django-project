@@ -9,6 +9,11 @@
 - Django not serving your static files in debug False. you need to serve it with web server like nginx, apache or etc.
 - debug False used in production environment. in production environment you used another tools to run django.
 
+## How does Nginx work?
+![code structure 01](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/How%20does%20Nginx%20work.png)
+
+
+
 ## What is Nginx?
 
 - Nginx is a web server that can also be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
@@ -55,7 +60,6 @@ python manage.py startapp myapp
 
 
 ### The structure of the project so far is as follows :
-
 ![code structure 01](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2001.png)
 
 ### 2. add app to INSTALLED_APPS and Setup up settings for static and media files
@@ -117,7 +121,8 @@ ENTRYPOINT [ "sh", "-c", "./scripts/start.sh" ]
 ```
 
 ### 2. Create a scripts directory in the project root directory. Inside it, create a start.sh file.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2002.png)
+
 
 - This bash script will run once we spin up a Django container.
 ```markdown
@@ -133,7 +138,7 @@ gunicorn project.wsgi -b 0.0.0.0:8000
 ```
 
 ### 3. Create a proxy directory in the project's root directory.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2003.png)
 
 ---
 
@@ -265,10 +270,10 @@ pip freeze > requirements.txt
 ```
 
 - Because we intend to receive an image file. Add the pillow library to the requirements.txt file.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2003.pngf)
 
 - Finally, the structure of your project should be as follows :
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2004.png)
 
 - We use the following command to give access to the start.sh file :
 ```markdown
@@ -276,7 +281,8 @@ chmod +x scripts/start.sh
 ```
 
 ## Note: If we do not execute the above command, we will encounter this scene.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/permission%20denid%20error.png)
+
 
 - build Docker :
 ```markdown
@@ -289,29 +295,30 @@ docker-compose up
 ```
 
 - Finally, the server should be running for you.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/run%20server.png)
+
 
 - Visit http://localhost/ to check if the static files are served.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/project%20home%20page.png)
 
 
 - To ensure the correct operation of media files, we create a superuser and upload a photo through the admin panel.
 
 
 ### 1. We right-click on the main program and go to the Attach Shell section :
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/docker%20containers.png)
 
 ### 2. We create a superuser using the following command.
 ```markdown
 python manage.py createsuperuser
 ```
-
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/create%20superuser%20in%20django.png)
 
 ### 3. Go to http://localhost/admin address and enter the admin panel.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/django%20admin%20panel.png)
+
 
 ### 4. If we click on the photo link, it should show the photo.
-///
+![code structure 02](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/uploaded%20media.png)
 
 ## It works properly :'))

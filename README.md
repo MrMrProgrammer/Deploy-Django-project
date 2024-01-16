@@ -56,7 +56,7 @@ python manage.py startapp myapp
 
 ### The structure of the project so far is as follows :
 
-![code structure 01](./README/code structure 01.png)
+![code structure 01](README/code structure 01.png)
 
 ### 2. add app to INSTALLED_APPS and Setup up settings for static and media files
 

@@ -56,7 +56,7 @@ python manage.py startapp myapp
 
 ### The structure of the project so far is as follows :
 
-![code structure 01]([https://github.com/MrMrProgrammer/Deploy-Django-project/README/code_structure_01.png](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2001.png))
+![code structure 01](https://raw.githubusercontent.com/MrMrProgrammer/Deploy-Django-project/main/README/code%20structure%2001.png)
 
 ### 2. add app to INSTALLED_APPS and Setup up settings for static and media files
 
